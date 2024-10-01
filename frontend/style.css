@@ -1,0 +1,56 @@
+:root{
+    --my-bg: #232946;
+    --mytext: #FFFFFE;
+    --mybutton: #EEBBC3;
+    --mybuttontext: #232946;
+    --mystroke: #121629;
+}
+
+.my-bg{
+    background-color: var(--my-bg);
+    color: var(--mytext);
+}
+
+.my-button{
+    background-color: var(--mybutton);
+    color: var(--mybuttontext);
+    border: var(--mystroke) solid 1px;
+    font-weight: bold;
+}
+
+.my-input{
+    width: 600px;
+    height: 3rem;
+    background-color: var(--mystroke);
+    color: var(--mytext);
+    border-radius: 13px;
+    padding-left: 20px;
+    border: var(--mybutton) 2px solid;
+    font-size: x-large;
+}
+
+input[type="date"].my-input{
+    width: 200px;
+    font-size: large;
+    border-radius: 10px;
+}
+
+textarea.my-input{
+    width: 400px;
+    height: 100px;
+    font-size: large;
+}
+
+.my-form{
+    border-radius: 30px;
+    background: #232946;
+    box-shadow:  20px 20px 60px #0e101c,
+                -20px -20px 60px #384270;
+}
+
+.my-login{
+    border-radius: 30px;
+    background: #EEBBC3;
+    box-shadow:  30px 30px 66px #ca9fa6,
+                -30px -30px 66px #ffd7e0;
+}

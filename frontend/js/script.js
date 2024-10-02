@@ -16,6 +16,9 @@ var taskList = []
 // saving task
 $("#task-form").on('submit', (event)=>{
   event.preventDefault()
+  if(!validateForm()){
+    return
+  }
   var newTask = {
     id: taskList.length + 1,
     title: $("#title").val(),
@@ -99,7 +102,7 @@ const showTasks = () => {
   })
 }
 
-// To eneter editor mode in the task
+// To enter editor mode in the task
 const editMode = (taskList) => {
   $('#task-list').on('click', '.btn-warning', (event)=>{
     event.stopPropagation()
@@ -301,3 +304,30 @@ const deleteTask = (taskid, userid) => {
   })
 }
 
+// To validate for not lettnig blank spaces
+const validateForm = () =>{
+  const inputTitle = $("input#title")
+  const inputDate = $("input#date")
+  const inputDescription = $("textarea#description")
+
+  if(!inputTitle.val() || !inputDate.val() || !inputDescription.val()){
+    inputTitle.removeClass('my-input').addClass('my-invalid-form')
+    inputDate.removeClass('my-input').addClass('my-invalid-form')
+    inputDescription.removeClass('my-input').addClass('my-invalid-form')
+    Toastify({
+      text: 'You are missing something...',
+      duration: 5000,
+      style: {
+        background: "#dc3545"
+      }
+    }).showToast();
+
+    return false
+  }else{
+    inputTitle.removeClass('my-input').addClass('my-valid-form')
+    inputDate.removeClass('my-input').addClass('my-valid-form')
+    inputDescription.removeClass('my-input').addClass('my-valid-form')
+  }
+
+  return true
+}

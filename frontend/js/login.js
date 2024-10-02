@@ -16,6 +16,9 @@ $(document).ready(() => {
 
     $("#login-form").on('submit', (e) => {
         e.preventDefault()
+        if(!validateForm()){
+            return
+        }
         const currentUSer = users.find(user => user.username == $("#username").val() && user.password == $("#password").val())
         console.log(currentUSer)
         if(currentUSer){
@@ -43,6 +46,27 @@ $(document).ready(() => {
         }
         
     })
-
-
 })
+
+const validateForm = () => {
+    const inputUsername = $("#username")
+    const inputPassword = $("#password")
+
+    if(!inputUsername.val() || !inputPassword.val()){
+        $("#username").addClass('is-invalid')
+        $("#password").addClass('is-invalid')
+        Toastify({
+            text: 'You are missing something...',
+            duration: 5000,
+            style: {
+              background: "#dc3545"
+            }
+          }).showToast();
+        return false
+    }else{
+        $("#username").removeClass('is-invalid').addClass('is-valid')
+        $("#password").removeClass('is-invalid').addClass('is-valid')
+    }
+    
+    return true
+}

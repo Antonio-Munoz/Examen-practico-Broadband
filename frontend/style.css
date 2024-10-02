@@ -54,3 +54,53 @@ textarea.my-input{
     box-shadow:  30px 30px 66px #ca9fa6,
                 -30px -30px 66px #ffd7e0;
 }
+
+.my-valid-form{
+    width: 600px;
+    height: 3rem;
+    background-color: var(--mystroke);
+    color: var(--mytext);
+    border-radius: 13px;
+    padding-left: 20px;
+    border: #198754 2px solid;
+    font-size: x-large;
+}
+
+input[type="date"].my-valid-form{
+    width: 200px;
+    font-size: large;
+    border-radius: 10px;
+    border: #198754 2px solid;
+}
+
+textarea.my-valid-form{
+    width: 400px;
+    height: 100px;
+    font-size: large;
+    border: #198754 2px solid;
+}
+
+.my-invalid-form{
+    width: 600px;
+    height: 3rem;
+    background-color: var(--mystroke);
+    color: var(--mytext);
+    border-radius: 13px;
+    padding-left: 20px;
+    border: #dc3545 2px solid;
+    font-size: x-large;
+}
+
+input[type="date"].my-invalid-form{
+    width: 200px;
+    font-size: large;
+    border-radius: 10px;
+    border: #dc3545 2px solid;
+}
+
+textarea.my-invalid-form{
+    width: 400px;
+    height: 100px;
+    font-size: large;
+    border: #dc3545 2px solid;
+}
